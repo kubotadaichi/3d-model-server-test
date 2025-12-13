@@ -1,6 +1,15 @@
 from fastapi import FastAPI, responses
+from starlette.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]       # テストなので許して
+)
 
 @app.get("/model")
 async def download():
