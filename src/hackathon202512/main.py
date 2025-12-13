@@ -13,4 +13,8 @@ app.add_middleware(
 
 @app.get("/model")
 async def download():
-	return responses.FileResponse("model/Running.fbx", filename="model")
+	return responses.FileResponse("model/Running.fbx", filename="model.fbx")
+
+@app.get("/model/head")
+async def download_head():
+    return responses.FileResponse("model/head.fbx", filename="model.fbx")
