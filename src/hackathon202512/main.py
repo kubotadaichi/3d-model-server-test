@@ -22,3 +22,7 @@ async def download_head():
 @app.get("/model/head2")
 async def download_head2():
     return responses.FileResponse("model/original.glb", filename="model.glb")
+
+@app.get("/model/head3")
+async def download_head3():
+    return responses.FileResponse("model/out.glb", filename="model.glb")
